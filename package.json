@@ -1,0 +1,11 @@
+{
+  "baseUrl": "https://lstnr.gq",
+  "private": true,
+  "scripts": {
+    "shorten": "netlify-shortener"
+  },
+  "author": "cukmekerb",
+  "devDependencies": {
+    "netlify-shortener": "^1.0.1"
+  }
+}
