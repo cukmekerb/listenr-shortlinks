@@ -1,13 +1,14 @@
 var Feed = require('rss-to-json');
 exports.handler = async (event, context) => {
     var rssurl = decodeURIComponent(event.queryStringParameters.url);
-    if (!rssurl) return { statusCode: 404, body: `{"error": "There was no provided RSS URL"}`, headers: { "content-type": "application/json" } }
+    if (!rssurl) return { statusCode: 404, body: `{"error": "There was no provided RSS URL"}`, headers: { "content-type": "application/json", "access-control-allow-origin": "*" } }
     try {
         var json_feed = await Feed.load(rssurl);
         json_feed = JSON.stringify(json_feed)
         return {
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "access-control-allow-origin": "*"
             },
             statusCode: 200,
             body: json_feed
@@ -16,7 +17,8 @@ exports.handler = async (event, context) => {
     catch (err) {
         return {
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "access-control-allow-origin": "*"
             },
             statusCode: 200,
             body: JSON.stringify({
