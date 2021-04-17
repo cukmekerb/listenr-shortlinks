@@ -9,6 +9,7 @@
     "netlify-shortener": "^1.0.1"
   },
   "dependencies": {
+    "atob": "^2.1.2",
     "rss-to-json": "^1.1.2"
   }
 }

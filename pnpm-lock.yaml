@@ -1,4 +1,5 @@
 dependencies:
+  atob: 2.1.2
   rss-to-json: 1.1.2
 devDependencies:
   netlify-shortener: 1.0.4
@@ -14,6 +15,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Of/R0wqp83cgHozfIYLbBMnej79U/SVGOOyuB3VVFv1NRM/PSFMK12x9KVtiYzJqmnU5WR2qp0Z5rHb7sWGnFQ==
+  /atob/2.1.2:
+    dev: false
+    engines:
+      node: '>= 4.5.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
   /axios/0.21.1:
     dependencies:
       follow-redirects: 1.13.3
@@ -448,5 +456,6 @@ packages:
     resolution:
       integrity: sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
 specifiers:
+  atob: ^2.1.2
   netlify-shortener: ^1.0.1
   rss-to-json: ^1.1.2
