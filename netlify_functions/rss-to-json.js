@@ -7,12 +7,12 @@ exports.handler = async (event, context) => {
         var start_from = Number(event.queryStringParameters.startfrom) || 0; // where to start from
         var json_feed = await Feed.load(rssurl);
         var new_items = json_feed.items.splice(start_from, res_len);
-        var new_feed = JSON.parse(JSON.stringify(json_feed))
+        var new_feed = JSON.parse(JSON.stringify(json_feed));
         new_feed.items = new_items;
-        new_feed = JSON.stringify(new_feed)
+        new_feed = JSON.stringify(new_feed);
         // allitems param
         if(event.queryStringParameters.allitems == 1 || event.queryStringParameters.allitems == "true"){
-            new_feed = JSON.stringify(json_feed)
+            new_feed = JSON.stringify(json_feed);
         }
         return {
             headers: {
@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
             },
             statusCode: 200,
             body: new_feed
-        }
+        };
     }
     catch (err) {
         return {
@@ -33,6 +33,6 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({
                 error: err
             })
-        }
+        };
     }
-}
+};
