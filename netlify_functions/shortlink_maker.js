@@ -3,7 +3,7 @@ var fetch = require("node-fetch");
 exports.handler = async (event, context) => {
   var response;
   try {
-    var url = new URL("https://script.google.com/macros/s/AKfycbyV5KBmG6g87GYTYcpu7YRIUAAdqXhEWD4a0hZrxLeFxH_KjlUAiR5Log/exec");
+    var url = new URL("https://script.google.com/macros/s/AKfycbyLW2i1013p5koGyF7MigAOjnUksqeVmxDfaeV2TRKgzL3ZuG_F/exec");
     for (var i in event.queryStringParameters) {
       url.searchParams.append(i, event.queryStringParameters[i]);
     }
