@@ -6,6 +6,12 @@ exports.handler = async (event, context) => {
         var res_len = Number(event.queryStringParameters.items) || 50; // how many results to give
         var start_from = Number(event.queryStringParameters.startfrom) || 0; // where to start from
         var json_feed = await Feed.load(rssurl);
+        json_feed.items = json_feed.items.sort((a, b) => {
+					let dates = [a.published, b.published];
+					if (dates[0] < dates[1]) return 1;
+					if (dates[1] < dates[0]) return -1;
+					return 0;
+        });
         var new_items = json_feed.items.splice(start_from, res_len);
         var new_feed = JSON.parse(JSON.stringify(json_feed));
         new_feed.items = new_items;
